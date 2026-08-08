@@ -17,7 +17,6 @@ A self-hosted, lightweight Flask web application that evaluates password strengt
 | Variable | Default | Description |
 | :--- | :--- | :--- |
 | `REDIS_URL` | `memory://` | Optional Redis URI for distributed rate limiting (e.g., `redis://192.168.1.X:6379/0`). |
-| `DISCORD_WEBHOOK_URL` | *(empty)* | Optional webhook URL for first-run/startup notifications. |
 | `DISABLE_TELEMETRY` | `false` | Set to `true` to disable anonymous startup metrics. |
 | `APP_SOURCE` | `unraid_ca` | Identifies deployment environment for container metrics. |
 
