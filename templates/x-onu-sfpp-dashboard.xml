@@ -19,7 +19,9 @@
 <Overview>
 A lightweight monitoring dashboard for EXEN X-ONU-SFPP and compatible ONTs running 8311 community firmware.
 
-The dashboard polls the ONT metrics endpoint and provides live and historical monitoring of RX optical power, TX optical power, TX bias current, module voltage, optic temperature, CPU temperatures, PLOAM state, and ONT reachability.
+Core monitoring uses the 8311 JSON metrics endpoint and provides live and historical optical levels, temperatures, PLOAM state, and ONT connectivity without requiring SSH.
+
+Optional SSH telemetry adds live XGS-PON traffic rates, byte counters, FEC/BIP/HEC/MIC statistics, alarms, ONT system information, and optical module details.
 
 The Unraid host must have network access to the ONT management IP.
 </Overview>
@@ -37,7 +39,7 @@ The Unraid host must have network access to the ONT management IP.
 <ExtraSearchTerms>XGS-PON XGSPON ONU ONT 8311 EXEN X-ONU-SFPP PON fiber optical monitoring</ExtraSearchTerms>
 
 <Requires>
-An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JSON metrics endpoint enabled. The Unraid server must be able to reach the ONT management IP.
+An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JSON metrics endpoint enabled. The Unraid server must be able to reach the ONT management IP. SSH access to the ONT is optional and is only required for advanced telemetry.
 </Requires>
 
 <Changes>Initial Community Applications release.</Changes>
@@ -87,7 +89,7 @@ An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JS
   Name="Polling Interval"
   Target="POLL_SECONDS"
   Default="10"
-  Description="Number of seconds between ONT metric requests."
+  Description="Number of seconds between core ONT metric requests."
   Type="Variable"
   Display="always"
   Required="true"
@@ -102,6 +104,94 @@ An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JS
   Type="Variable"
   Display="always"
   Required="true"
+  Mask="false"
+/>
+
+<Config
+  Name="Enable Advanced SSH Telemetry"
+  Target="SSH_ENABLED"
+  Default="false"
+  Description="Enable optional SSH-based advanced telemetry. Core monitoring works without SSH."
+  Type="Variable"
+  Display="always"
+  Required="true"
+  Mask="false"
+/>
+
+<Config
+  Name="SSH Host"
+  Target="SSH_HOST"
+  Default="192.168.11.1"
+  Description="Management IP or hostname of the ONT used for advanced SSH telemetry."
+  Type="Variable"
+  Display="advanced"
+  Required="false"
+  Mask="false"
+/>
+
+<Config
+  Name="SSH Port"
+  Target="SSH_PORT"
+  Default="22"
+  Description="SSH port used for advanced telemetry."
+  Type="Variable"
+  Display="advanced"
+  Required="false"
+  Mask="false"
+/>
+
+<Config
+  Name="SSH Username"
+  Target="SSH_USER"
+  Default="root"
+  Description="SSH username used for advanced telemetry."
+  Type="Variable"
+  Display="advanced"
+  Required="false"
+  Mask="false"
+/>
+
+<Config
+  Name="SSH Password"
+  Target="SSH_PASSWORD"
+  Default=""
+  Description="SSH password used for advanced telemetry. The value is passed to the container as a Docker environment variable and can be inspected by users with Docker or Unraid host access."
+  Type="Variable"
+  Display="advanced"
+  Required="false"
+  Mask="true"
+/>
+
+<Config
+  Name="SSH Polling Interval"
+  Target="SSH_POLL_SECONDS"
+  Default="30"
+  Description="Number of seconds between advanced SSH telemetry collection cycles."
+  Type="Variable"
+  Display="advanced"
+  Required="false"
+  Mask="false"
+/>
+
+<Config
+  Name="SSH Connection Timeout"
+  Target="SSH_TIMEOUT"
+  Default="10"
+  Description="SSH connection timeout in seconds."
+  Type="Variable"
+  Display="advanced"
+  Required="false"
+  Mask="false"
+/>
+
+<Config
+  Name="SSH Command Timeout"
+  Target="SSH_COMMAND_TIMEOUT"
+  Default="30"
+  Description="Maximum time in seconds allowed for advanced telemetry commands."
+  Type="Variable"
+  Display="advanced"
+  Required="false"
   Mask="false"
 />
 
