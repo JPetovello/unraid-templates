@@ -24,6 +24,15 @@ Core monitoring uses the 8311 JSON metrics endpoint and provides live and histor
 Optional SSH telemetry adds live XGS-PON traffic rates, byte counters, FEC/BIP/HEC/MIC statistics, alarms, ONT system information, and optical module details.
 
 The Unraid host must have network access to the ONT management IP.
+
+IMPORTANT - NON-ROOT UPGRADE:
+The container now runs as nobody:users (UID 99 / GID 100). Fresh installations require no additional permission changes.
+
+Existing installations from earlier versions may have a root-owned metrics database. Before updating the container, run this one-time command on the Unraid host if using the default appdata path:
+
+chown -R 99:100 /mnt/user/appdata/x-onu-dashboard
+
+This preserves the existing database and historical data while allowing the non-root container to continue writing new samples.
 </Overview>
 
 <Project>https://github.com/JPetovello/x-onu-sfpp-dashboard</Project>
