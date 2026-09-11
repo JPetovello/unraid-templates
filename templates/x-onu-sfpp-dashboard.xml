@@ -23,10 +23,16 @@ Core monitoring uses the 8311 JSON metrics endpoint and provides live and histor
 
 Optional SSH telemetry adds live XGS-PON traffic rates, byte counters, FEC/BIP/HEC/MIC statistics, alarms, ONT system information, and optical module details.
 
+Server-side alert monitoring includes configurable thresholds, severities, debounce behavior, counter deltas, and cooldowns. Alerts are stored in SQLite and continue to be evaluated even when the dashboard is not open.
+
+Notification providers include Discord, ntfy, Gotify, Pushover, and Generic Webhook.
+
+Telemetry and alert-history retention are configurable from the dashboard. The main dashboard shows the 3 most recent alerts, with a dedicated Alert History page providing retained alerts newest-first with 25 alerts per page.
+
 The Unraid host must have network access to the ONT management IP.
 
 IMPORTANT - NON-ROOT UPGRADE:
-The container now runs as nobody:users (UID 99 / GID 100). Fresh installations require no additional permission changes.
+The container runs as nobody:users (UID 99 / GID 100). Fresh installations require no additional permission changes.
 
 Existing installations from earlier versions may have a root-owned metrics database. Before updating the container, run this one-time command on the Unraid host if using the default appdata path:
 
@@ -51,9 +57,9 @@ This preserves the existing database and historical data while allowing the non-
 An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JSON metrics endpoint enabled. The Unraid server must be able to reach the ONT management IP. SSH access to the ONT is optional and is only required for advanced telemetry.
 </Requires>
 
-<Changes>Initial Community Applications release.</Changes>
+<Changes>v3.2.0 - Added configurable data retention, expanded alerting and notification support, and a dedicated paginated Alert History page.</Changes>
 
-<Date>2026-09-05</Date>
+<Date>2026-09-11</Date>
 
 <MinVer>6.12</MinVer>
 
