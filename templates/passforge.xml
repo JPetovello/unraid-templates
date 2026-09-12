@@ -44,9 +44,13 @@ Redis is optional. By default, PassForge uses in-memory rate-limit storage and r
 No additional services are required. Internet access is required only for Have I Been Pwned breach checks. Password analysis and passphrase generation remain available independently of HIBP.
 </Requires>
 
-<Changes>v1.0.0 - Initial PassForge release.</Changes>
+<Changes>
+v1.0.1 - Added automated Bandit, pip-audit, and Trivy security gates; upgraded Alpine runtime packages.
 
-<Date>2026-09-11</Date>
+v1.0.0 - Initial PassForge release.
+</Changes>
+
+<Date>2026-09-12</Date>
 
 <License>AGPL-3.0-or-later</License>
 
