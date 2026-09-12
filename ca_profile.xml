@@ -1,15 +1,15 @@
 <CommunityApplications>
 
 <Profile>
-X-ONU-SFPP Dashboard provides a lightweight Unraid Docker application for monitoring EXEN X-ONU-SFPP and compatible XGS-PON ONTs running 8311 community firmware.
+JPetovello's Repository provides Unraid Docker applications focused on practical self-hosted tools and monitoring.
 
-It displays live and historical optical power, temperatures, module voltage, TX bias, PLOAM state, and ONT connectivity.
+Current applications include X-ONU-SFPP Dashboard for monitoring EXEN X-ONU-SFPP and compatible XGS-PON ONTs running 8311 community firmware, and PassForge for privacy-focused password analysis and secure passphrase generation.
 
-Project source, documentation, and issue tracking are available on GitHub.
+Project source code, documentation, and issue tracking are available through the individual application repositories on GitHub.
 </Profile>
 
-<Icon>https://raw.githubusercontent.com/JPetovello/unraid-templates/main/icons/x-onu-sfpp-dashboard.png</Icon>
+<Icon>https://raw.githubusercontent.com/JPetovello/unraid-templates/main/icons/passforge.png</Icon>
 
-<WebPage>https://github.com/JPetovello/x-onu-sfpp-dashboard</WebPage>
+<WebPage>https://github.com/JPetovello/unraid-templates</WebPage>
 
 </CommunityApplications>

@@ -36,7 +36,7 @@ Redis is optional. By default, PassForge uses in-memory rate-limit storage and r
 
 <ReadMe>https://raw.githubusercontent.com/JPetovello/PassForge/main/README.md</ReadMe>
 
-<Category>Tools:System</Category>
+<Category>Tools:Utilities</Category>
 
 <ExtraSearchTerms>password passwords passphrase passphrases password strength entropy HIBP Have I Been Pwned security generator EFF zxcvbn</ExtraSearchTerms>
 
