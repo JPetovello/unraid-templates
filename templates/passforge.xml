@@ -1,0 +1,76 @@
+<Container version="2">
+
+<Name>PassForge</Name>
+
+<Repository>ghcr.io/jpetovello/passforge:latest</Repository>
+
+<Registry>https://github.com/JPetovello/PassForge/pkgs/container/passforge</Registry>
+
+<Network>bridge</Network>
+
+<Shell>bash</Shell>
+
+<Privileged>false</Privileged>
+
+<Icon>https://raw.githubusercontent.com/JPetovello/unraid-templates/main/icons/passforge.png</Icon>
+
+<WebUI>http://[IP]:[PORT:5000]</WebUI>
+
+<Overview>
+PassForge is a privacy-focused password analysis and secure passphrase generation tool.
+
+Evaluate password strength using zxcvbn and entropy analysis, check passwords against the Have I Been Pwned Pwned Passwords database using the k-Anonymity range API, and generate cryptographically secure passphrases from the official EFF large and short wordlists.
+
+Password breach checks are privacy-preserving: PassForge hashes the password locally and sends only the first 5 characters of the SHA-1 hash to Have I Been Pwned. The plaintext password is never sent to HIBP.
+
+PassForge also provides configurable passphrase length, wordlists, separators, entropy targets, batch generation, dark mode, and Progressive Web App support.
+
+Redis is optional. By default, PassForge uses in-memory rate-limit storage and requires no additional services.
+</Overview>
+
+<Project>https://github.com/JPetovello/PassForge</Project>
+
+<Support>https://github.com/JPetovello/PassForge/issues</Support>
+
+<TemplateURL>https://raw.githubusercontent.com/JPetovello/unraid-templates/main/templates/passforge.xml</TemplateURL>
+
+<ReadMe>https://raw.githubusercontent.com/JPetovello/PassForge/main/README.md</ReadMe>
+
+<Category>Tools:System</Category>
+
+<ExtraSearchTerms>password passwords passphrase passphrases password strength entropy HIBP Have I Been Pwned security generator EFF zxcvbn</ExtraSearchTerms>
+
+<Requires>
+No additional services are required. Internet access is required only for Have I Been Pwned breach checks. Password analysis and passphrase generation remain available independently of HIBP.
+</Requires>
+
+<Changes>v1.0.0 - Initial PassForge release.</Changes>
+
+<Date>2026-09-12</Date>
+
+<License>AGPL-3.0-or-later</License>
+
+<Config
+  Name="WebUI"
+  Target="5000"
+  Default="5000"
+  Mode="tcp"
+  Description="Host port used to access the PassForge web interface."
+  Type="Port"
+  Display="always"
+  Required="true"
+  Mask="false"
+/>
+
+<Config
+  Name="Redis URL"
+  Target="REDIS_URL"
+  Default="memory://"
+  Description="Optional Redis connection URL for shared rate-limit storage. Leave as memory:// to use PassForge's built-in in-memory storage."
+  Type="Variable"
+  Display="advanced"
+  Required="true"
+  Mask="false"
+/>
+
+</Container>
