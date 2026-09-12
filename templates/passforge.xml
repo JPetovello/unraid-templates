@@ -45,6 +45,8 @@ No additional services are required. Internet access is required only for Have I
 </Requires>
 
 <Changes>
+v1.1.0 - Moved password analysis, HIBP suffix matching, and passphrase generation into the browser. The server now receives only the five-character HIBP hash prefix. Added verified browser dependencies and expanded privacy and security testing.
+
 v1.0.1 - Added automated Bandit, pip-audit, and Trivy security gates; upgraded Alpine runtime packages.
 
 v1.0.0 - Initial PassForge release.
