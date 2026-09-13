@@ -47,7 +47,7 @@ No additional services are required. Internet access is required only for Have I
 </Requires>
 
 <Changes>
-v1.2.1 - Hardened the default container runtime with a read-only root filesystem, restricted /tmp tmpfs, all Linux capabilities dropped, and no-new-privileges enabled.
+v1.2.1 - Hardened the default container runtime with a read-only root filesystem, restricted /tmp tmpfs, all Linux capabilities dropped, and no-new-privileges enabled. Changed the default Unraid WebUI host port to 5150.
 
 v1.1.0 - Moved password analysis, HIBP suffix matching, and passphrase generation into the browser. The server now receives only the five-character HIBP hash prefix. Added verified browser dependencies and expanded privacy and security testing.
 
@@ -63,7 +63,7 @@ v1.0.0 - Initial PassForge release.
 <Config
   Name="WebUI"
   Target="5000"
-  Default="5000"
+  Default="5150"
   Mode="tcp"
   Description="Host port used to access the PassForge web interface."
   Type="Port"
