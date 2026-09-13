@@ -38,6 +38,8 @@ Redis is optional. By default, PassForge uses in-memory rate-limit storage and r
 
 <Category>Tools:Utilities</Category>
 
+<ExtraParams>--read-only --tmpfs /tmp:rw,noexec,nosuid,nodev,size=16m,mode=1777 --cap-drop=ALL --security-opt=no-new-privileges:true</ExtraParams>
+
 <ExtraSearchTerms>password passwords passphrase passphrases password strength entropy HIBP Have I Been Pwned security generator EFF zxcvbn</ExtraSearchTerms>
 
 <Requires>
@@ -45,6 +47,8 @@ No additional services are required. Internet access is required only for Have I
 </Requires>
 
 <Changes>
+v1.2.1 - Hardened the default container runtime with a read-only root filesystem, restricted /tmp tmpfs, all Linux capabilities dropped, and no-new-privileges enabled.
+
 v1.1.0 - Moved password analysis, HIBP suffix matching, and passphrase generation into the browser. The server now receives only the five-character HIBP hash prefix. Added verified browser dependencies and expanded privacy and security testing.
 
 v1.0.1 - Added automated Bandit, pip-audit, and Trivy security gates; upgraded Alpine runtime packages.
@@ -52,7 +56,7 @@ v1.0.1 - Added automated Bandit, pip-audit, and Trivy security gates; upgraded A
 v1.0.0 - Initial PassForge release.
 </Changes>
 
-<Date>2026-09-12</Date>
+<Date>2026-09-13</Date>
 
 <License>AGPL-3.0-or-later</License>
 
