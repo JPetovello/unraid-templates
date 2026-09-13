@@ -57,9 +57,9 @@ This preserves the existing database and historical data while allowing the non-
 An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JSON metrics endpoint enabled. The Unraid server must be able to reach the ONT management IP. SSH access to the ONT is optional and is only required for advanced telemetry.
 </Requires>
 
-<Changes>v3.2.0 - Added configurable data retention, expanded alerting and notification support, and a dedicated paginated Alert History page.</Changes>
+<Changes>v3.3.0 - Added profile-aware TX optical health with an XGSPONST2001 A-01 profile using the documented 4.00-9.00 dBm XGS-PON operating envelope, while preserving Legacy and Custom threshold modes.</Changes>
 
-<Date>2026-09-11</Date>
+<Date>2026-09-12</Date>
 
 
 <License>AGPL-3.0-or-later</License>
