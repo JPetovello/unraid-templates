@@ -19,13 +19,13 @@
 <Overview>
 PassForge is a privacy-focused password analysis and secure passphrase generation tool.
 
-Evaluate password strength using zxcvbn and entropy analysis, check passwords against the Have I Been Pwned Passwords database using the k-Anonymity range API, and generate cryptographically secure passphrases from the official EFF large and short wordlists.
+Evaluate password strength using zxcvbn and entropy analysis, check passwords against the Have I Been Pwned (HIBP) breach database using the k-Anonymity range API, and generate cryptographically secure passphrases from the official EFF large and short wordlists.
 
-Password analysis, SHA-1 hashing, HIBP suffix matching, and passphrase generation run locally in your browser. For breach checks, the browser sends only the first 5 characters of the SHA-1 hash to the PassForge server, which retrieves the matching HIBP range. The plaintext password and complete hash never leave your browser.
+Password analysis, SHA-1 hashing, breach-result matching, and passphrase generation run locally in your browser. For breach checks, only the first 5 characters of the SHA-1 hash are sent to the PassForge backend, which retrieves the matching HIBP range. Your plaintext password and complete hash never leave your browser.
 
 PassForge also provides configurable passphrase length, wordlists, separators, entropy targets, batch generation, dark mode, and Progressive Web App support.
 
-Redis is optional. By default, PassForge uses in-memory rate-limit storage and requires no additional services.
+No additional services are required. Redis is optional and can be used for shared rate-limit storage; by default, PassForge uses built-in in-memory rate limiting.
 </Overview>
 
 <Project>https://github.com/JPetovello/PassForge</Project>
@@ -56,7 +56,7 @@ v1.0.1 - Added automated Bandit, pip-audit, and Trivy security gates; upgraded A
 v1.0.0 - Initial PassForge release.
 </Changes>
 
-<Date>2026-09-13</Date>
+<Date>2026-09-14</Date>
 
 <License>AGPL-3.0-or-later</License>
 
