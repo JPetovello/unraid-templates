@@ -56,7 +56,17 @@ chown -R 99:100 /mnt/user/appdata/x-onu-dashboard
 Fresh installations require no permission changes.
 </Requires>
 
-<Changes>v3.3.0 - Added profile-aware TX optical health with an XGSPONST2001 A-01 profile using the documented 4.00-9.00 dBm XGS-PON operating envelope, while preserving Legacy and Custom threshold modes.</Changes>
+<Changes>
+v3.3.0 - Added light, dark, and system themes, developer documentation, alert-config-driven dashboard health thresholds, and profile-aware TX optical health. Added the XGSPONST2001 A-01 profile using the documented 4.00-9.00 dBm XGS-PON operating envelope while preserving Legacy and Custom threshold modes.
+
+v3.2.0 - Added configurable telemetry retention, paginated alert history, notification credential hardening, persistent SSH host-key verification, and debounce handling for core telemetry reachability alerts.
+
+v3.1.0 - Added notification providers and the alert settings page, documented alert configuration, and improved recent-alert presentation.
+
+v3.0.1 - Improved alert settings and alert-history layout.
+
+v3.0.0 - Initial public v3 release.
+</Changes>
 
 <Date>2026-09-14</Date>
 

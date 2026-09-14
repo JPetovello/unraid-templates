@@ -47,7 +47,9 @@ No additional services are required. Internet access is required only for Have I
 </Requires>
 
 <Changes>
-v1.2.1 - Hardened the default container runtime with a read-only root filesystem, restricted /tmp tmpfs, all Linux capabilities dropped, and no-new-privileges enabled. Changed the default Unraid WebUI host port to 5150.
+v1.2.1 - Pinned the fixed libuuid package version used by the container runtime to resolve the remaining container security finding. Changed the default Unraid WebUI host port to 5150.
+
+v1.2.0 - Hardened the dependency and CI supply chain, HIBP prefix handling and logging, trusted-proxy rate limiting, Content Security Policy, container runtime isolation, and early rate-limit handling. Added developer documentation and removed sensitive HIBP prefix data from error logs.
 
 v1.1.0 - Moved password analysis, HIBP suffix matching, and passphrase generation into the browser. The server now receives only the five-character HIBP hash prefix. Added verified browser dependencies and expanded privacy and security testing.
 
