@@ -57,6 +57,8 @@ Fresh installations require no permission changes.
 </Requires>
 
 <Changes>
+v3.4.0 - Added optional dashboard authentication and configurable ONT TLS verification. Hardened notification delivery against SSRF, bounded notification backlog and alert-history pagination, persisted alert runtime state across restarts, rebaselined alert state after policy changes, and added browser security headers. Improved telemetry validation, retention failure handling, SQLite history downsampling and connection cleanup, build/dependency reproducibility, Docker build hygiene, and container health checks.
+
 v3.3.0 - Added light, dark, and system themes, developer documentation, alert-config-driven dashboard health thresholds, and profile-aware TX optical health. Added the XGSPONST2001 A-01 profile using the documented 4.00-9.00 dBm XGS-PON operating envelope while preserving Legacy and Custom threshold modes.
 
 v3.2.0 - Added configurable telemetry retention, paginated alert history, notification credential hardening, persistent SSH host-key verification, and debounce handling for core telemetry reachability alerts.
