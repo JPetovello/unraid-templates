@@ -70,7 +70,7 @@ v3.0.1 - Improved alert settings and alert-history layout.
 v3.0.0 - Initial public v3 release.
 </Changes>
 
-<Date>2026-09-14</Date>
+<Date>2026-09-15</Date>
 
 
 <License>AGPL-3.0-or-later</License>
@@ -115,17 +115,6 @@ v3.0.0 - Initial public v3 release.
   Target="POLL_SECONDS"
   Default="10"
   Description="Number of seconds between core ONT metric requests."
-  Type="Variable"
-  Display="always"
-  Required="true"
-  Mask="false"
-/>
-
-<Config
-  Name="Retention"
-  Target="RETENTION_DAYS"
-  Default="30"
-  Description="Number of days of historical samples to retain."
   Type="Variable"
   Display="always"
   Required="true"
