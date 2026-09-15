@@ -46,17 +46,17 @@ The Unraid host must have network access to the ONT management IP. SSH access is
 
 <ExtraSearchTerms>XGS-PON XGSPON ONU ONT 8311 EXEN X-ONU-SFPP PON fiber optical monitoring</ExtraSearchTerms>
 
-<Requires>
-An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JSON metrics endpoint enabled. The Unraid server must be able to reach the ONT management IP. SSH access to the ONT is optional and is required only for advanced telemetry.
+<Requires>An EXEN X-ONU-SFPP or compatible ONT running 8311 community firmware with the JSON metrics endpoint enabled. The Unraid server must be able to reach the ONT management IP. SSH access to the ONT is optional and is required only for advanced telemetry.
 
 Existing installations upgraded from older root-running versions may have root-owned application data. If the container cannot write to its existing database after upgrading, run this one-time command on the Unraid host if using the default appdata path:
 
 chown -R 99:100 /mnt/user/appdata/x-onu-dashboard
 
-Fresh installations require no permission changes.
-</Requires>
+Fresh installations require no permission changes.</Requires>
 
 <Changes>
+v3.5.0 - Added the optional UCG Fiber ONT management helper, standalone helper documentation, and installation instructions for Linux/macOS and Windows. The helper is optional and does not change normal dashboard behavior for users who do not install it.
+
 v3.4.0 - Added optional dashboard authentication and configurable ONT TLS verification. Hardened notification delivery against SSRF, bounded notification backlog and alert-history pagination, persisted alert runtime state across restarts, rebaselined alert state after policy changes, and added browser security headers. Improved telemetry validation, retention failure handling, SQLite history downsampling and connection cleanup, build/dependency reproducibility, Docker build hygiene, and container health checks.
 
 v3.3.0 - Added light, dark, and system themes, developer documentation, alert-config-driven dashboard health thresholds, and profile-aware TX optical health. Added the XGSPONST2001 A-01 profile using the documented 4.00-9.00 dBm XGS-PON operating envelope while preserving Legacy and Custom threshold modes.
