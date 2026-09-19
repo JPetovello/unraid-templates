@@ -36,7 +36,7 @@ The Unraid host must have network access to the ONT management IP. SSH access is
 
 <Project>https://github.com/JPetovello/x-onu-sfpp-dashboard</Project>
 
-<Support>https://github.com/JPetovello/x-onu-sfpp-dashboard/issues</Support>
+<Support>https://forums.unraid.net/topic/200639-support-x-onu-sfpp-dashboard/</Support>
 
 <TemplateURL>https://raw.githubusercontent.com/JPetovello/unraid-templates/main/templates/x-onu-sfpp-dashboard.xml</TemplateURL>
 
