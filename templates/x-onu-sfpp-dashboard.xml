@@ -23,6 +23,8 @@ Core monitoring uses the 8311 JSON metrics endpoint to provide live and historic
 
 Optional SSH telemetry adds live XGS-PON traffic rates, byte counters, FEC/BIP/HEC/MIC statistics, active alarms, ONT system information, and optical module details.
 
+On-demand Diagnostics provide standard status and counter views plus expert Datapath, PPv4, and burst-profile output over SSH. Diagnostics run only when explicitly requested and remain separate from normal background polling and alert processing.
+
 Server-side alert monitoring provides configurable thresholds, severities, debounce behavior, counter-delta detection, and cooldowns. Alerts are stored in SQLite and continue to be evaluated even when the dashboard is not open.
 
 Notifications are supported through Discord, ntfy, Gotify, Pushover, and Generic Webhook.
@@ -55,6 +57,8 @@ chown -R 99:100 /mnt/user/appdata/x-onu-dashboard
 Fresh installations require no permission changes.</Requires>
 
 <Changes>
+v3.6.0 - Added dedicated Advanced and Diagnostics pages, on-demand standard and expert diagnostic profiles, improved dashboard telemetry organization, and unified Alerts &amp; Notifications navigation and layout. Hardened diagnostic execution, upgraded Paramiko to 5.0.0, migrated the runtime to digest-pinned Python 3.13 Alpine, and expanded regression and security validation.
+
 v3.5.0 - Added the optional UCG Fiber ONT management helper, standalone helper documentation, and installation instructions for Linux/macOS and Windows. The helper is optional and does not change normal dashboard behavior for users who do not install it.
 
 v3.4.0 - Added optional dashboard authentication and configurable ONT TLS verification. Hardened notification delivery against SSRF, bounded notification backlog and alert-history pagination, persisted alert runtime state across restarts, rebaselined alert state after policy changes, and added browser security headers. Improved telemetry validation, retention failure handling, SQLite history downsampling and connection cleanup, build/dependency reproducibility, Docker build hygiene, and container health checks.
@@ -70,7 +74,7 @@ v3.0.1 - Improved alert settings and alert-history layout.
 v3.0.0 - Initial public v3 release.
 </Changes>
 
-<Date>2026-09-15</Date>
+<Date>2026-09-20</Date>
 
 
 <License>AGPL-3.0-or-later</License>
