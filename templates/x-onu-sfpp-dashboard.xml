@@ -27,7 +27,7 @@ On-demand Diagnostics provide standard status and counter views plus expert Data
 
 Server-side alert monitoring provides configurable thresholds, severities, debounce behavior, counter-delta detection, and cooldowns. Alerts are stored in SQLite and continue to be evaluated even when the dashboard is not open.
 
-Notifications are supported through Discord, ntfy, Gotify, Pushover, and Generic Webhook.
+Notifications are supported through Discord, ntfy, Gotify, Pushover, Generic Webhook, and Email (Gmail SMTP).
 
 Telemetry and alert-history retention are configurable from the dashboard. Recent alerts are shown directly on the main dashboard, with a dedicated paginated Alert History view for retained events.
 
@@ -57,6 +57,12 @@ chown -R 99:100 /mnt/user/appdata/x-onu-dashboard
 Fresh installations require no permission changes.</Requires>
 
 <Changes>
+v3.7.0 - Added Gmail SMTP email notifications using Google App Password authentication, with masked credential handling, safe preservation of existing secrets, and backward-compatible migration of existing notification settings. Expanded Gmail-specific regression coverage and documentation.
+
+v3.6.2 - Hardened notification delivery and added automated security scanning with Bandit, pip-audit, Trivy, Gitleaks, ShellCheck, Hadolint, and container-image vulnerability scanning. Refined release security-scan behavior and Docker release tagging.
+
+v3.6.1 - Polished the Diagnostics interface and accessibility, expanded Diagnostics frontend regression coverage, and adjusted Docker publication so the latest image tag is published only for versioned releases.
+
 v3.6.0 - Added dedicated Advanced and Diagnostics pages, on-demand standard and expert diagnostic profiles, improved dashboard telemetry organization, and unified Alerts &amp; Notifications navigation and layout. Hardened diagnostic execution, upgraded Paramiko to 5.0.0, migrated the runtime to digest-pinned Python 3.13 Alpine, and expanded regression and security validation.
 
 v3.5.0 - Added the optional UCG Fiber ONT management helper, standalone helper documentation, and installation instructions for Linux/macOS and Windows. The helper is optional and does not change normal dashboard behavior for users who do not install it.
@@ -74,7 +80,7 @@ v3.0.1 - Improved alert settings and alert-history layout.
 v3.0.0 - Initial public v3 release.
 </Changes>
 
-<Date>2026-09-20</Date>
+<Date>2026-09-21</Date>
 
 
 <License>AGPL-3.0-or-later</License>
