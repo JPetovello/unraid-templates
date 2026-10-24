@@ -33,6 +33,10 @@ Telemetry and alert-history retention are configurable from the dashboard. Recen
 
 The dashboard also supports light, dark, and system themes.
 
+Version 3.8.0 introduces a redesigned five-page interface and independent CPU and optical temperature monitoring.
+
+Optional dashboard authentication is available through a username and password. It is disabled by default. HTTP Basic credentials are not encrypted over HTTP; use HTTPS on untrusted networks.
+
 The Unraid host must have network access to the ONT management IP. SSH access is optional and is required only for advanced telemetry.
 </Overview>
 
@@ -57,6 +61,8 @@ chown -R 99:100 /mnt/user/appdata/x-onu-dashboard
 Fresh installations require no permission changes.</Requires>
 
 <Changes>
+v3.8.0 - Redesigned the Dashboard, Advanced, Diagnostics, Settings, and Alert History interfaces. Added independent CPU and optical temperature monitoring with separate thermal thresholds, alert handling, and configuration migration. Expanded automated regression coverage and gated Docker image publishing behind security and regression verification.
+
 v3.7.0 - Added Gmail SMTP email notifications using Google App Password authentication, with masked credential handling, safe preservation of existing secrets, and backward-compatible migration of existing notification settings. Expanded Gmail-specific regression coverage and documentation.
 
 v3.6.2 - Hardened notification delivery and added automated security scanning with Bandit, pip-audit, Trivy, Gitleaks, ShellCheck, Hadolint, and container-image vulnerability scanning. Refined release security-scan behavior and Docker release tagging.
@@ -80,7 +86,7 @@ v3.0.1 - Improved alert settings and alert-history layout.
 v3.0.0 - Initial public v3 release.
 </Changes>
 
-<Date>2026-09-21</Date>
+<Date>2026-10-23</Date>
 
 
 <License>AGPL-3.0-or-later</License>
@@ -129,6 +135,28 @@ v3.0.0 - Initial public v3 release.
   Display="always"
   Required="true"
   Mask="false"
+/>
+
+<Config
+  Name="Dashboard Username"
+  Target="DASHBOARD_AUTH_USERNAME"
+  Default=""
+  Description="Optional dashboard login username. Configure together with Dashboard Password. Leave both blank to disable authentication."
+  Type="Variable"
+  Display="always"
+  Required="false"
+  Mask="false"
+/>
+
+<Config
+  Name="Dashboard Password"
+  Target="DASHBOARD_AUTH_PASSWORD"
+  Default=""
+  Description="Optional dashboard login password. Configure together with Dashboard Username. Masked in the Unraid interface, but accessible to users with Docker or host access. Use HTTPS on untrusted networks."
+  Type="Variable"
+  Display="always"
+  Required="false"
+  Mask="true"
 />
 
 <Config
